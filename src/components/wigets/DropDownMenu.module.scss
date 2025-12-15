@@ -1,0 +1,50 @@
+.container {
+  position: relative;
+}
+
+.btn {
+  background-color: transparent;
+  border: none;
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  cursor: pointer;
+
+  >span {
+    color: rgba(71, 64, 49, 1);
+    font-size: 15px;
+    line-height: 100%;
+    font-weight: 600;
+  }
+
+  >svg {
+    transform: rotate(0);
+    transition: transform .3s ease-in-out;
+  }
+
+  &__open {
+    >svg {
+      transform: rotate(180deg);
+    }
+  }
+}
+
+.list {
+  position: absolute;
+  right: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: all .3s ease-in-out;
+  min-width: max-content;
+  border: 0;
+  background-color: white;
+  padding: 0;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+
+  &__open {
+    //border: 1px solid rgba(236, 232, 227, 1);
+    padding: 5px;
+    max-height: 300px;
+  }
+}

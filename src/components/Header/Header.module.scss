@@ -1,11 +1,21 @@
+%text {
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 100%;
+}
+
 .header {
-  max-width: 1280px;
+  position: relative;
 
   >div {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 0 40px;
+  }
+
+  a {
+    color: rgba(71, 64, 49, 1);
   }
 }
 
@@ -27,9 +37,8 @@
 
     span {
       color: rgba(136, 123, 97, 1);
+      @extend %text;
       font-size: 13px;
-      line-height: 100%;
-      font-weight: 600;
     }
   }
 }
@@ -39,4 +48,57 @@
   border-bottom: 1px solid rgba(236, 232, 227, 1);
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
+
+  .links {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    @extend %text;
+  }
+
+  .contacts {
+    display: flex;
+    align-items: center;
+
+    a {
+      @extend %text;
+    }
+
+    >a:nth-child(2) {
+      margin-left: 52px;
+    }
+
+    >button {
+      background-color: rgba(84, 75, 70, 1);
+      border-radius: 60px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      color: white;
+      padding: 21px 30px 23px 26px;
+      @extend %text;
+      font-weight: 700;
+      cursor: pointer;
+      margin-left: 26px;
+    }
+  }
+}
+
+.modal {
+  position: absolute;
+  top: -100vh;
+  left: 20%;
+  background-color: rgba(84, 75, 70, 1);
+  transition: top .3s ease-in-out;
+  color: white;
+  @extend %text;
+  padding: 16px;
+  border-radius: 12px;
+  min-width: 60%;
+  text-align: center;
+  min-height: 40vh;
+
+  &__open {
+    top: 5vh;
+  }
 }
