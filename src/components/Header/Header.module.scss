@@ -101,4 +101,14 @@
   &__open {
     top: 5vh;
   }
+
+  >button {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background-color: transparent;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
 }

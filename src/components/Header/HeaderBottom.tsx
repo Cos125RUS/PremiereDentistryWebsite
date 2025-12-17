@@ -44,13 +44,14 @@ export const HeaderBottom = () => {
             <div className={styles.contacts}>
                 <a href="tel:+74232658950">+7 (423) 265-89-50</a>
                 <Link href='/search'><SearchSvg/></Link>
-                <button onClick={() => setIsOpen(!isOpen)}>
+                <button onClick={() => setIsOpen(true)}>
                     <EnvelopeSvg/>
                     <span>Записаться</span>
                 </button>
             </div>
             <div className={classNames(styles.modal, isOpen && styles.modal__open)}>
                 <h3>Модальное окно для записи</h3>
+                <button onClick={() => setIsOpen(false)}>X</button>
             </div>
         </div>
     );

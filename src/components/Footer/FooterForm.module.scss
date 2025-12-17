@@ -1,0 +1,49 @@
+.form {
+  label {
+    color: rgba(223, 222, 221, 0.33);
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 126%;
+  }
+
+  input {
+    background-color: transparent;
+    border: 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  }
+
+  .success {
+    input[type='submit'] {
+      color: rgba(84, 75, 70, 1);
+      font-weight: bold;
+      font-size: 15px;
+      line-height: 100%;
+      border: 1px solid rgba(191, 168, 143, 1);
+      border-radius: 60px;
+      background-color: white;
+      padding: 21px 64px;
+    }
+
+    label {
+      line-height: 22%;
+      font-weight: 400;
+
+      input[type='checkbox'] {
+        color: rgba(255, 255, 255, 0.15);
+        border-radius: 5px;
+      }
+    }
+  }
+}
+
+.top {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 46px;
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}

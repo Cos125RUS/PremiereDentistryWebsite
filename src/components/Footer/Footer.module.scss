@@ -1,0 +1,38 @@
+.container {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  color: white;
+  background-color: rgba(84, 75, 70, 1);
+
+  >div {
+    padding: 150px;
+
+    &:first-child {
+      border-right: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    &:last-child {
+      border-left: 1px solid rgba(255, 255, 255, 0.06);
+    }
+  }
+}
+
+.left {
+  >* {
+    max-width: 400px;
+  }
+
+  h3 {
+    font-size: 46px;
+    line-height: 140%;
+    font-weight: bold;
+    margin-bottom: 126px;
+  }
+
+  p {
+    font-size: 16px;
+    line-height: 170%;
+    font-weight: 500;
+  }
+}
