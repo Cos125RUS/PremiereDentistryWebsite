@@ -1,15 +1,33 @@
+%font {
+  font-weight: 500;
+  line-height: 126%;
+}
+
 .form {
   label {
     color: rgba(223, 222, 221, 0.33);
-    font-weight: 500;
     font-size: 14px;
-    line-height: 126%;
+    @extend %font;
   }
 
   input {
     background-color: transparent;
     border: 0;
     border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    @extend %font;
+    font-size: 20px;
+    padding-bottom: 22px;
+    padding-top: 10px;
+    color: rgba(223, 222, 221, 1);
+
+    &::placeholder {
+      color: rgba(223, 222, 221, 1);
+      font-size: 16px;
+    }
+
+    &:focus {
+      outline: 0;
+    }
   }
 
   .success {
@@ -21,19 +39,53 @@
       border: 1px solid rgba(191, 168, 143, 1);
       border-radius: 60px;
       background-color: white;
-      padding: 21px 64px;
+      padding: 21px 34px;
+      cursor: pointer;
     }
 
     label {
-      line-height: 22%;
+      line-height: 22px;
       font-weight: 400;
+      display: flex;
+      gap: 10px;
+      position: relative;
+      cursor: pointer;
 
       input[type='checkbox'] {
-        color: rgba(255, 255, 255, 0.15);
+        visibility: hidden;
+        position: absolute;
+
+        &:checked ~ span {
+          >svg {
+            display: block;
+            transform: rotate(90deg);
+          }
+        }
+      }
+
+      >span {
+        min-width: 18px;
+        max-width: 18px;
+        min-height: 18px;
+        max-height: 18px;
+        background-color: rgba(255, 255, 255, 0.15);
         border-radius: 5px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        >svg {
+          display: none;
+        }
       }
     }
   }
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
 }
 
 .top {
@@ -42,8 +94,11 @@
   margin-bottom: 46px;
 }
 
-.item {
+.middle {
+  margin-bottom: 54px;
+}
+
+.bottom {
   display: flex;
-  flex-direction: column;
-  gap: 10px;
+  gap: 45px;
 }
