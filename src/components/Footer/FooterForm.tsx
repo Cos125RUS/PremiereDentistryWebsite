@@ -7,6 +7,9 @@ import {useState} from "react";
 import {FooterInput} from "@/components/Footer/FooterInput";
 import {useAppDispatch} from "@/utils/storage/store";
 import {setAlert} from "@/utils/storage/slice/siteSlice";
+import {check} from "@/components/Footer/utils/check";
+import {newOrderRequest} from "@/utils/requests/newOrderRequest";
+import {convertPhoneNumber} from "@/utils/converters/convertPhoneNumber";
 
 /**
  * Форма для отправки заявок в подвале страницы
@@ -23,10 +26,16 @@ export const FooterForm = () => {
     /** Обработка отправки формы */
     const onSubmit = (e:  React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        dispatch(setAlert('test'));
+        const error = check(name, phone, mail, success);
 
-        //TODO добавить чекеры
-        //TODO добавить отправку
+        if (error) {
+            dispatch(setAlert(error as string));
+        } else {
+            //TODO Добавить индикатор отправки
+            newOrderRequest({name, phone, mail, comment, success})
+                .then(console.log)
+                .catch(console.error);
+        }
     };
 
     return (
@@ -34,7 +43,7 @@ export const FooterForm = () => {
             <div className={styles.top}>
                 <FooterInput value={name} setValue={setName} id='footer-form-name'
                              placeholder='Ваше имя' label="Имя"/>
-                <FooterInput value={phone} setValue={setPhone} id='footer-form-phone'
+                <FooterInput value={phone} setValue={(value) => setPhone(convertPhoneNumber(value))} id='footer-form-phone'
                              placeholder='Ваш номер' type="tel" label="Телефон"/>
                 <FooterInput value={mail} setValue={setMail} id='footer-form-mail'
                              placeholder='E-mail' type="email" label="Почта"/>
