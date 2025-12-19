@@ -5,12 +5,15 @@ import classNames from "classnames";
 import {CheckSvg} from "@/components/ui/CheckSvg";
 import {useState} from "react";
 import {FooterInput} from "@/components/Footer/FooterInput";
+import {useAppDispatch} from "@/utils/storage/store";
+import {setAlert} from "@/utils/storage/slice/siteSlice";
 
 /**
  * Форма для отправки заявок в подвале страницы
  * @constructor
  */
 export const FooterForm = () => {
+    const dispatch =useAppDispatch();
     const [name, setName] = useState('');
     const [phone, setPhone] = useState('');
     const [mail, setMail] = useState('');
@@ -20,12 +23,14 @@ export const FooterForm = () => {
     /** Обработка отправки формы */
     const onSubmit = (e:  React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
+        dispatch(setAlert('test'));
+
         //TODO добавить чекеры
         //TODO добавить отправку
     };
 
     return (
-        <form action="/order" className={styles.form} onSubmit={onSubmit}>
+        <form className={styles.form} onSubmit={onSubmit}>
             <div className={styles.top}>
                 <FooterInput value={name} setValue={setName} id='footer-form-name'
                              placeholder='Ваше имя' label="Имя"/>
