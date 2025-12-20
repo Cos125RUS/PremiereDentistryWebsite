@@ -1,10 +1,10 @@
 import type {Metadata} from "next";
 import "./globals.css";
 import styles from "./layout.module.scss";
-import {Header} from "@/components/Header/Header";
-import {Footer} from "@/components/Footer/Footer";
-import {ReduxProvider} from "@/components/support/ReduxProvider";
-import {Alert} from "@/components/wigets/Alert";
+import {Header} from "@/app/components/Header/Header";
+import {Footer} from "@/app/components/Footer/Footer";
+import {ReduxProvider} from "@/app/components/support/ReduxProvider";
+import {Alert} from "@/app/components/wigets/Alert";
 
 export const metadata: Metadata = {
     title: "Create Next App",
