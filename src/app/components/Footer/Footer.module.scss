@@ -2,8 +2,8 @@
   display: flex;
   justify-content: space-between;
   gap: 20px;
-  color: white;
-  background-color: rgba(84, 75, 70, 1);
+  color: var(--white);
+  background-color: var(--dark-brown);
 
   >div {
     padding: 150px;

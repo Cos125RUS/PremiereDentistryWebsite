@@ -42,13 +42,13 @@
 
   .success {
     input[type='submit'], >div {
-      color: rgba(84, 75, 70, 1);
+      color: var(--dark-brown);
       font-weight: bold;
       font-size: 15px;
       line-height: 100%;
-      border: 1px solid rgba(191, 168, 143, 1);
+      border: 1px solid var(--brown);
       border-radius: 60px;
-      background-color: white;
+      background-color: var(--white);
       padding: 21px 34px;
       cursor: pointer;
     }
@@ -72,7 +72,7 @@
         top: calc(50% - 20px);
         left: calc(50% - 20px);
         animation: load 3s linear infinite;
-        fill: #544B46;
+        fill: var(--dark-brown);
       }
     }
 
