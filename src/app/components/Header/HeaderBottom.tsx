@@ -15,7 +15,7 @@ export const HeaderBottom = () => {
 
     return (
         <div className={styles.bottom}>
-            <div>
+            <div className="max-width">
                 <Link href='/public'>
                     <LogoSvg/>
                 </Link>

@@ -5,7 +5,7 @@ import {MaxSvg} from "@/app/components/ui/icon/MaxSvg";
 export const HeaderTop = () => {
     return (
         <div className={styles.top}>
-            <div>
+            <div className="max-width">
                 <button className={styles.topButton}>
                     <GlassesSvg/>
                     <span>Версия для слабовидящин</span>

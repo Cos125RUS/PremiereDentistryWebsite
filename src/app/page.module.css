@@ -1,5 +1,15 @@
 .page {
-    max-width: var(--max-width);
-    margin-left: calc((100% - var(--max-width)) / 2);
-    margin-top: 150px;
+    width: 100%;
+
+    .title {
+        padding: 125px 0 60px;
+        border-bottom: 1px solid rgba(245, 240, 236, 1);
+
+        h2 {
+            font-size: 46px;
+            line-height: 126%;
+            font-weight: 600;
+            color: var(--deep-brown);
+        }
+    }
 }

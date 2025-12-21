@@ -43,3 +43,7 @@ ul, li {
     list-style: none;
 }
 
+.max-width {
+    max-width: var(--max-width);
+    margin-left: calc((100% - var(--max-width)) / 2);
+}
