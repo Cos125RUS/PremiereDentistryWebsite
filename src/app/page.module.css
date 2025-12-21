@@ -1,3 +1,5 @@
 .page {
+    max-width: var(--max-width);
+    margin-left: calc((100% - var(--max-width)) / 2);
     margin-top: 150px;
 }

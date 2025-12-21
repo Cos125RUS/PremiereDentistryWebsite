@@ -1,19 +1,24 @@
 .container {
-  display: flex;
-  justify-content: space-between;
-  gap: 20px;
   color: var(--white);
   background-color: var(--dark-brown);
 
   >div {
-    padding: 150px;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    max-width: var(--max-width);
+    margin-left: calc((100% - var(--max-width)) / 2);
 
-    &:first-child {
-      border-right: 1px solid rgba(255, 255, 255, 0.06);
-    }
+    >div {
+      &:first-child {
+        padding: 150px 199px 150px 0;
+        border-right: 1px solid rgba(255, 255, 255, 0.06);
+      }
 
-    &:last-child {
-      border-left: 1px solid rgba(255, 255, 255, 0.06);
+      &:last-child {
+        padding: 150px 0 150px 199px;
+        border-left: 1px solid rgba(255, 255, 255, 0.06);
+      }
     }
   }
 }
@@ -21,6 +26,7 @@
 .left {
   >* {
     max-width: 400px;
+    min-width: 400px;
   }
 
   h3 {
