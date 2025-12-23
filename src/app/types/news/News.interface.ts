@@ -2,6 +2,6 @@
 export interface News {
     date: string,
     title: string,
-    text: string,
+    description: string,
     img: string,
 }

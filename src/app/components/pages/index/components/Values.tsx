@@ -34,9 +34,11 @@ export const Values = () => {
         </div>);
     }
 
-    return components.map((component, index) => (
-        <div key={`value-${index}`} className={styles.row}>
-            {component}
-        </div>
-    ));
+    return <div className={styles.container}>
+        {components.map((component, index) => (
+            <div key={`value-${index}`} className={styles.row}>
+                {component}
+            </div>
+        ))}
+    </div>
 };

@@ -1,6 +1,6 @@
 "use client";
 
-import {News} from "@/app/components/pages/index/components/News";
+import {NewsBox} from "@/app/components/pages/index/components/NewsBox";
 import {RootState, useAppDispatch, useAppSelector} from "@/app/utils/storage/store";
 import {useEffect} from "react";
 import {newsLoader} from "@/app/utils/storage/loaders/newsLoader";
@@ -18,5 +18,5 @@ export const LoadNews = () => {
         return "Loading...";//TODO добавить прелоадер
     }
 
-    return <News/>;
+    return <NewsBox/>;
 };
