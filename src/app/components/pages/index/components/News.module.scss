@@ -20,6 +20,11 @@
   position: absolute;
   right: calc(-65px / 2);
   top: calc((470px - 65px) / 2);
+  transition: transform .2s ease-in-out;
+
+  &:hover {
+    transform: scale(1.1);
+  }
 }
 
 .linkNewsBox {
@@ -47,6 +52,7 @@
     overflow: hidden;
     border-radius: 12px;
     position: relative;
+    margin-bottom: 40px;
 
     >img {
       border: 1px solid var(--light-brown);
@@ -55,6 +61,33 @@
     >button {
       position: absolute;
       z-index: 1;
+    }
+  }
+
+  .text {
+    >p {
+      &:first-child {
+        color: var(--brown);
+        margin-bottom: 20px;
+        font-size: 14px;
+        font-weight: 700;
+        line-height: 170%;
+      }
+
+      &:last-child {
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 170%;
+        color: rgba(90, 88, 87, 0.64);
+      }
+    }
+
+    >h6 {
+      color: var(--deep-brown);
+      font-weight: 600;
+      font-size: 20px;
+      line-height: 140%;
+      margin-bottom: 14px;
     }
   }
 }
