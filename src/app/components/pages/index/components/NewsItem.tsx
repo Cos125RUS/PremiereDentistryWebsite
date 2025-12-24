@@ -1,6 +1,7 @@
 import {News} from "@/app/types/news/News.interface";
 import Image from "next/image";
 import styles from "./News.module.scss";
+import Link from "next/link";
 
 interface Props {
     news: News;
@@ -12,7 +13,7 @@ export const NewsItem: React.FC<Props> = ({news}) => {
         <div className={styles.news}>
             <div className={styles.img}>
                 <Image width={399} height={470} src={news.img} alt={news.title}/>
-                <button>Новость</button>
+                <Link href={news.link}>Новость</Link>
             </div>
             <div className={styles.text}>
                 <p>{news.date}</p>
