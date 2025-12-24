@@ -4,20 +4,48 @@ import {RootState, useAppSelector} from "@/app/utils/storage/store";
 import classNames from "classnames";
 import {NewsItem} from "@/app/components/pages/index/components/NewsItem";
 import Link from "next/link";
+import {useCallback, useMemo, useRef, useState} from "react";
+
+//Ширина карточки новостей
+const NEWS_CARD_WIDTH = 407;
 
 /** Блок новостей */
 export const NewsBox = () => {
     const news = useAppSelector((state: RootState) => state.site.news);
     const newsCounter = 10;//TODO заменить на загрузку
+    const listRef = useRef<HTMLUListElement | null>(null);
+    const [offset, setOffset] = useState(0);
+    const offsetLength = useMemo(() => news.length - 4, [news.length]);
+
+    /** Прокрутка новостей */
+    const scrollNews = useCallback((arg: number) => {
+        if (listRef.current) {
+            let newOffset = (offset + arg);
+            if (newOffset > offsetLength) {
+                newOffset = 0;
+            } else if (newOffset < 0) {
+                newOffset = offsetLength;
+            }
+
+            listRef.current.scrollLeft = NEWS_CARD_WIDTH * newOffset;
+            setOffset(newOffset);
+        }
+    }, [offset, offsetLength, listRef]);
 
     return (
         <div className={classNames("max-width", styles.container)}>
-            <ul className={classNames(styles.newsList)}>
+            <ul className={classNames(styles.newsList)} ref={listRef}>
                 {news.map((item, index) => <li key={`news-${index}`}>
                     <NewsItem news={item}/>
                 </li>)}
             </ul>
-            <button className={styles.RightScrollBtn}><CheckSvg/></button>
+            {/*Второй скроллбар для перемещения в обратную сторону*/}
+            {/*<button className={styles.leftScrollBtn} onClick={() => scrollNews(-1)}>*/}
+            {/*    <CheckSvg/>*/}
+            {/*</button>*/}
+            <button className={styles.rightScrollBtn} onClick={() => scrollNews(1)}>
+                <CheckSvg/>
+            </button>
             <div className={styles.linkNewsBox}>
                 <Link href='/news' className={styles.linkNewsBtn}>Все публикации <span>({newsCounter})</span></Link>
             </div>

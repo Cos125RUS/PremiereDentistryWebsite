@@ -1,3 +1,19 @@
+%scrollBtn {
+  border: 0;
+  border-radius: 50%;
+  width: 65px;
+  height: 65px;
+  background-color: var(--dark-brown);
+  cursor: pointer;
+  position: absolute;
+  transition: transform .2s ease-in-out;
+  top: calc((470px - 65px) / 2);
+
+  &:hover {
+    transform: scale(1.1);
+  }
+}
+
 .container {
   position: relative;
   margin-bottom: 125px;
@@ -8,23 +24,32 @@
   gap: 8px;
   overflow: hidden;
   margin-bottom: 70px;
+  position: relative;
+  scroll-behavior: smooth;
+  overflow-x: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  overflow: -moz-scrollbars-none;
+
+  &::-webkit-scrollbar {
+    display: none;
+    width: 0;
+    height: 0;
+  }
 }
 
-.RightScrollBtn {
-  border: 0;
-  border-radius: 50%;
-  width: 65px;
-  height: 65px;
-  background-color: var(--dark-brown);
-  cursor: pointer;
-  position: absolute;
-  right: calc(-65px / 2);
-  top: calc((470px - 65px) / 2);
-  transition: transform .2s ease-in-out;
+.leftScrollBtn {
+  @extend %scrollBtn;
+  left: calc(-65px / 2);
 
-  &:hover {
-    transform: scale(1.1);
+  >svg {
+    transform: rotate(180deg);
   }
+}
+
+.rightScrollBtn {
+  @extend %scrollBtn;
+  right: calc(-65px / 2);
 }
 
 .linkNewsBox {
@@ -42,7 +67,7 @@
   line-height: 126%;
   font-weight: 700;
 
-  >span {
+  > span {
     color: var(--brown);
   }
 }
@@ -54,18 +79,18 @@
     position: relative;
     margin-bottom: 40px;
 
-    >img {
+    > img {
       border: 1px solid var(--light-brown);
     }
 
-    >button {
+    > button {
       position: absolute;
       z-index: 1;
     }
   }
 
   .text {
-    >p {
+    > p {
       &:first-child {
         color: var(--brown);
         margin-bottom: 20px;
@@ -82,7 +107,7 @@
       }
     }
 
-    >h6 {
+    > h6 {
       color: var(--deep-brown);
       font-weight: 600;
       font-size: 20px;
