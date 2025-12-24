@@ -1,6 +1,7 @@
 import {createSlice} from "@reduxjs/toolkit";
 import {News} from "@/app/types/news/News.interface";
 import {newsCases} from "@/app/utils/storage/cases/newsCases";
+import {newsCountCases} from "@/app/utils/storage/cases/newsCountCases";
 
 type lvl = 'error' | 'warning' | 'success';
 
@@ -13,12 +14,15 @@ interface AlertInterface {
 export interface SiteSlice {
     alert: AlertInterface;
     news: News[];
+    newsCount: number;
     isFinishedNews: boolean;
     loading: {
         news: boolean;
+        newsCount: boolean;
     },
     errors: {
         news: string;
+        newsCount: string;
     }
 }
 
@@ -29,12 +33,15 @@ const initialState: SiteSlice = {
         isShow: false,
     },
     news: [],
+    newsCount: 0,
     isFinishedNews: false,
     loading: {
         news: true,
+        newsCount: true,
     },
     errors: {
         news: '',
+        newsCount: '',
     }
 };
 
@@ -57,6 +64,7 @@ const siteSlice = createSlice({
     },
     extraReducers: (builder) => {
         newsCases(builder);
+        newsCountCases(builder);
     }
 });
 

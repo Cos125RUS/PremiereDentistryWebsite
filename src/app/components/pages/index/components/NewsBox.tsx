@@ -11,8 +11,7 @@ const NEWS_CARD_WIDTH = 407;
 
 /** Блок новостей */
 export const NewsBox = () => {
-    const news = useAppSelector((state: RootState) => state.site.news);
-    const newsCounter = 10;//TODO заменить на загрузку
+    const {news, newsCount} = useAppSelector((state: RootState) => state.site);
     const listRef = useRef<HTMLUListElement | null>(null);
     const [offset, setOffset] = useState(0);
     const offsetLength = useMemo(() => news.length - 4, [news.length]);
@@ -47,7 +46,7 @@ export const NewsBox = () => {
                 <CheckSvg/>
             </button>
             <div className={styles.linkNewsBox}>
-                <Link href='/news' className={styles.linkNewsBtn}>Все публикации <span>({newsCounter})</span></Link>
+                <Link href='/news' className={styles.linkNewsBtn}>Все публикации {!!newsCount && <span>({newsCount})</span>}</Link>
             </div>
         </div>
     );
