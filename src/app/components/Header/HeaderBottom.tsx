@@ -9,6 +9,7 @@ import {SearchSvg} from "@/app/components/ui/icon/SearchSvg";
 import {EnvelopeSvg} from "@/app/components/ui/icon/EnvelopeSvg";
 import {useState} from "react";
 import classNames from "classnames";
+import {LogoSmallSvg} from "@/app/components/ui/icon/LogoSmallSvg";
 
 export const HeaderBottom = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -16,8 +17,9 @@ export const HeaderBottom = () => {
     return (
         <div className={styles.bottom}>
             <div className="max-width">
-                <Link href='/public'>
+                <Link href='/public' className={styles.logo}>
                     <LogoSvg/>
+                    <LogoSmallSvg/>
                 </Link>
                 <div>
                     <DropDownMenu label='Услуги'>
@@ -44,6 +46,7 @@ export const HeaderBottom = () => {
                 </div>
                 <div className={styles.contacts}>
                     <a href="tel:+74232658950">+7 (423) 265-89-50</a>
+                    <span></span>
                     <Link href='/search'><SearchSvg/></Link>
                     <button onClick={() => setIsOpen(true)}>
                         <EnvelopeSvg/>

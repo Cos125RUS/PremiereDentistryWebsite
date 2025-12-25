@@ -10,5 +10,13 @@
             font-weight: 600;
             color: var(--deep-brown);
         }
+
+        @media (max-width: 1280px) {
+            padding: 75px 0 50px;
+
+            h2 {
+                font-size: 40px;
+            }
+        }
     }
 }

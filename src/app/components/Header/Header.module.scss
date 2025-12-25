@@ -2,6 +2,10 @@
   font-weight: 600;
   font-size: 15px;
   line-height: 100%;
+
+  @media (max-width: 1280px) {
+    font-size: 14px;
+  }
 }
 
 .header {
@@ -10,10 +14,10 @@
   flex-direction: column;
   align-items: center;
 
-  >div {
+  > div {
     width: 100%;
 
-    >div {
+    > div {
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -28,7 +32,7 @@
 .top {
   border-bottom: 1px solid rgba(245, 240, 236, 1);
 
-  >div {
+  > div {
     min-height: 46px;
   }
 
@@ -57,8 +61,28 @@
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
 
-  >div {
+  > div {
     min-height: 100px;
+
+    @media (max-width: 1280px) {
+      min-height: 90px;
+    }
+  }
+
+  .logo {
+    > svg {
+      &:first-child {
+        @media (max-width: 1280px) {
+          display: none;
+        }
+      }
+
+      &:last-child {
+        @media (min-width: 1281px) {
+          display: none;
+        }
+      }
+    }
   }
 
   .links {
@@ -66,6 +90,10 @@
     align-items: center;
     gap: 28px;
     @extend %text;
+
+    @media (max-width: 1280px) {
+      gap: 20px;
+    }
   }
 
   .contacts {
@@ -74,24 +102,50 @@
 
     a {
       @extend %text;
+
+      &:nth-child(1) {
+        margin-right: 26px;
+      }
+
+      &:nth-child(3) {
+        margin-left: 26px;
+      }
+
+      @media (max-width: 1280px) {
+        &:nth-child(1) {
+          margin-right: 18px;
+        }
+
+        &:nth-child(3) {
+          margin-left: 18px;
+        }
+      }
     }
 
-    >a:nth-child(2) {
-      margin-left: 52px;
+    > span {
+      min-height: 9px;
+      border-right: 1px solid rgba(102, 86, 77, 0.35);
     }
 
-    >button {
+    > button {
       background-color: var(--dark-brown);
       border-radius: 60px;
       display: flex;
       align-items: center;
       gap: 6px;
       color: var(--white);
-      padding: 21px 30px 23px 26px;
+      padding: 19px 30px 19px 26px;
       @extend %text;
       font-weight: 700;
       cursor: pointer;
       margin-left: 26px;
+      border: 0;
+
+      @media (max-width: 1280px) {
+        gap: 4px;
+        padding: 17px 22px;
+        margin-left: 18px;
+      }
     }
   }
 }
@@ -114,7 +168,7 @@
     top: 5vh;
   }
 
-  >button {
+  > button {
     position: absolute;
     top: 15px;
     right: 15px;

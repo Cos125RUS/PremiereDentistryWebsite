@@ -17,6 +17,16 @@
         padding: 150px 0 150px 199px;
         border-left: 1px solid rgba(255, 255, 255, 0.06);
       }
+
+      @media (max-width: 1280px) {
+        &:first-child {
+          padding: 130px 0 163px;
+        }
+
+        &:last-child {
+          padding: 130px 0 163px 197px;
+        }
+      }
     }
   }
 }
@@ -30,7 +40,7 @@
   h3 {
     font-size: 46px;
     line-height: 140%;
-    font-weight: bold;
+    font-weight: 600;
     margin-bottom: 126px;
   }
 
@@ -38,5 +48,15 @@
     font-size: 16px;
     line-height: 170%;
     font-weight: 500;
+  }
+
+  @media (max-width: 1280px) {
+    h3 {
+      font-size: 40px;
+    }
+
+    p {
+      font-size: 15px;
+    }
   }
 }

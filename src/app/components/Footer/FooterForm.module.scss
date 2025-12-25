@@ -38,6 +38,10 @@
     &:focus {
       outline: 0;
     }
+
+    @media (max-width: 1280px) {
+      font-size: initial;
+    }
   }
 
   .success {
@@ -111,6 +115,10 @@
           display: none;
         }
       }
+
+      @media (max-width: 1280px) {
+        font-size: 13px;
+      }
     }
   }
 }
@@ -125,10 +133,19 @@
   display: flex;
   gap: 10px;
   margin-bottom: 46px;
+
+  @media (max-width: 1280px) {
+    gap: 8px;
+    margin-bottom: 40px;
+  }
 }
 
 .middle {
   margin-bottom: 54px;
+
+  @media (max-width: 1280px) {
+    margin-bottom: 70px;
+  }
 }
 
 .bottom {
