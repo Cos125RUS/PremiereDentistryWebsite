@@ -3,14 +3,12 @@
 import styles from "@/app/components/Header/Header.module.scss";
 import Link from "next/link";
 import {LogoSvg} from "@/app/components/ui/icon/LogoSvg";
-import {DropDownMenu} from "@/app/components/wigets/DropDownMenu";
-import {dropDownItemsMock} from "@/app/mock/dropDownItems.mock";
 import {SearchSvg} from "@/app/components/ui/icon/SearchSvg";
 import {EnvelopeSvg} from "@/app/components/ui/icon/EnvelopeSvg";
 import {useState} from "react";
 import classNames from "classnames";
 import {LogoSmallSvg} from "@/app/components/ui/icon/LogoSmallSvg";
-import {HamburgerSvg} from "@/app/components/ui/icon/HamburgerSvg";
+import {HeaderMenu} from "@/app/components/Header/HeaderMenu";
 
 export const HeaderBottom = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -22,37 +20,7 @@ export const HeaderBottom = () => {
                     <LogoSvg/>
                     <LogoSmallSvg/>
                 </Link>
-                <div className={styles.services}>
-                    <DropDownMenu label='Услуги'>
-                        {dropDownItemsMock.map((item) => (
-                            <li key={`service-${item.id}`}>
-                                <Link href={item.link}>{item.label}</Link>
-                            </li>
-                        ))}
-                    </DropDownMenu>
-                </div>
-                <div className={styles.links}>
-                    <DropDownMenu label='О клинике'>
-                        {dropDownItemsMock.map((item) => (
-                            <li key={`about-${item.id}`}>
-                                <Link href={item.link}>{item.label}</Link>
-                            </li>
-                        ))}
-                    </DropDownMenu>
-                    <Link href='/team'>Команда</Link>
-                    <Link href='/price'>Цены</Link>
-                    <Link href='/result'>Результаты работ</Link>
-                    <Link href='/events'>Акции</Link>
-                    <Link href='/contacts'>Контакты</Link>
-                </div>
-                <div>
-                <div className={styles.mobileMenu}>
-                    <label htmlFor='mobile-header-menu'>
-                        <HamburgerSvg/>
-                    </label>
-                    <input type='checkbox' id='mobile-header-menu'/>
-                </div>
-                </div>
+                <HeaderMenu/>
                 <div className={styles.contacts}>
                     <a href="tel:+74232658950">+7 (423) 265-89-50</a>
                     <span></span>
