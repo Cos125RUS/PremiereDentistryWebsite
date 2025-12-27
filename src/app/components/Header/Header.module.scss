@@ -67,6 +67,10 @@
     @media (max-width: 1280px) {
       min-height: 90px;
     }
+
+    @media (max-width: 768px) {
+      min-height: 74px;
+    }
   }
 
   .logo {
@@ -85,6 +89,12 @@
     }
   }
 
+  .services {
+    @media (max-width: 768px) {
+      display: none;
+    }
+  }
+
   .links {
     display: flex;
     align-items: center;
@@ -93,6 +103,10 @@
 
     @media (max-width: 1280px) {
       gap: 20px;
+    }
+
+    @media (max-width: 768px) {
+      display: none;
     }
   }
 
@@ -114,6 +128,10 @@
       @media (max-width: 1280px) {
         &:nth-child(1) {
           margin-right: 18px;
+
+          @media (max-width: 768px) {
+            display: none;
+          }
         }
 
         &:nth-child(3) {
@@ -125,6 +143,10 @@
     > span {
       min-height: 9px;
       border-right: 1px solid rgba(102, 86, 77, 0.35);
+
+      @media (max-width: 768px) {
+        display: none;
+      }
     }
 
     > button {
@@ -146,6 +168,26 @@
         padding: 17px 22px;
         margin-left: 18px;
       }
+
+      @media (max-width: 768px) {
+        padding: 14px 22px;
+      }
+    }
+  }
+
+  .mobileMenu {
+    >label {
+      cursor: pointer;
+    }
+
+    >input[type='checkbox'] {
+      //position: absolute;
+      //left: -9999999px;
+      //visibility: hidden;
+    }
+
+    @media (min-width: 769px) {
+      display: none;
     }
   }
 }
