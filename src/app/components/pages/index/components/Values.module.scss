@@ -1,12 +1,18 @@
 .container {
   border-top: 1px solid rgba(245, 240, 236, 1);
+
+  @media (max-width: 480px) {
+    display: flex;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+  }
 }
 
 .row {
   border-bottom: 1px solid rgba(245, 240, 236, 1);
 
   @media (max-width: 480px) {
-    display: flex;
+    min-width: 100vw;
   }
 }
 
@@ -75,6 +81,10 @@
       &:first-child {
         border-right: 0;
         border-bottom: 1px solid rgba(245, 240, 236, 1);
+      }
+
+      &:last-child {
+        margin-left: 0;
       }
 
       >div>p {
@@ -156,4 +166,30 @@
 
 .paragraph {
   color: rgba(90, 88, 87, 0.64);
+}
+
+.slider {
+  margin-top: 30px;
+  display: flex;
+  gap: 4px;
+  width: 100%;
+  justify-content: center;
+
+  .item {
+    min-height: 4px;
+    min-width: 4px;
+    transition: all .2s ease-in-out;
+    background-color: var(--brown);
+    border-radius: 50%;
+
+    &__active {
+      border-radius: 4px;
+      min-width: 70px;
+      background-color: var(--dark-brown);
+    }
+  }
+
+  @media (min-width: 481px) {
+    display: none;
+  }
 }
