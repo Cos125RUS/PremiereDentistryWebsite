@@ -18,5 +18,13 @@
                 font-size: 40px;
             }
         }
+
+        @media (max-width: 768px) {
+            padding-top: 60px;
+
+            h2 {
+                font-size: 36px;
+            }
+        }
     }
 }

@@ -1,20 +1,30 @@
+"use client";
+
 import {CheckSvg} from "@/app/components/ui/icon/CheckSvg";
 import styles from "./News.module.scss";
 import {RootState, useAppSelector} from "@/app/utils/storage/store";
 import classNames from "classnames";
 import {NewsItem} from "@/app/components/pages/index/components/NewsItem";
 import Link from "next/link";
-import {useCallback, useMemo, useRef, useState} from "react";
+import {useCallback, useEffect, useMemo, useRef, useState} from "react";
 
 //Ширина карточки новостей
-const NEWS_CARD_WIDTH = 407;
+const NEWS_CARD_WIDTH = 399;
 
 /** Блок новостей */
 export const NewsBox = () => {
     const {news, newsCount} = useAppSelector((state: RootState) => state.site);
     const listRef = useRef<HTMLUListElement | null>(null);
     const [offset, setOffset] = useState(0);
+    const cardWidth = useRef(NEWS_CARD_WIDTH);
     const offsetLength = useMemo(() => news.length - 4, [news.length]);
+
+    /** Определение единицы смещения */
+    useEffect(() => {
+        if (news.length && listRef.current) {
+            cardWidth.current = listRef.current.children?.[0]?.clientWidth ?? NEWS_CARD_WIDTH;
+        }
+    }, [news.length]);
 
     /** Прокрутка новостей */
     const scrollNews = useCallback((arg: number) => {
@@ -26,7 +36,7 @@ export const NewsBox = () => {
                 newOffset = offsetLength;
             }
 
-            listRef.current.scrollLeft = NEWS_CARD_WIDTH * newOffset;
+            listRef.current.scrollLeft = (cardWidth.current + 8) * newOffset;
             setOffset(newOffset);
         }
     }, [offset, offsetLength, listRef]);

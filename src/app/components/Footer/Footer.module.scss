@@ -27,6 +27,24 @@
           padding: 130px 0 163px 197px;
         }
       }
+
+      @media (max-width: 768px) {
+        &:first-child {
+          border: 0;
+          padding: 100px 28px 0 0;
+        }
+
+        &:last-child {
+          border: 0;
+          padding: 0;
+          margin-bottom: 94px;
+        }
+      }
+    }
+
+    @media (max-width: 768px) {
+      flex-direction: column;
+      gap: 57px;
     }
   }
 }
@@ -57,6 +75,25 @@
 
     p {
       font-size: 15px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+
+    >h3 {
+      font-size: 36px;
+      min-width: 0;
+      margin-bottom: 0;
+    }
+
+    > p {
+      font-size: 14px;
+      min-width: 0;
+      margin-bottom: 0;
+      margin-top: 24px;
     }
   }
 }
