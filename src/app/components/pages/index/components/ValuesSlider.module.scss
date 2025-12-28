@@ -1,0 +1,24 @@
+.container {
+  margin-top: 30px;
+  display: flex;
+  gap: 4px;
+  width: 100%;
+  justify-content: center;
+
+  @media (min-width: 481px) {
+    display: none;
+  }
+}
+
+.item {
+  min-height: 4px;
+  min-width: 4px;
+  transition: all .2s ease-in-out;
+  background-color: var(--brown);
+  border-radius: 50%;
+
+  &__active {
+    min-width: 70px;
+    background-color: var(--dark-brown);
+  }
+}

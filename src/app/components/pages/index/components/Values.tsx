@@ -4,6 +4,7 @@ import {valuesData} from "@/app/components/pages/index/data/values.data";
 import styles from "./Values.module.scss";
 import Image from "next/image";
 import classNames from "classnames";
+import {ValuesSlider} from "@/app/components/pages/index/components/ValuesSlider";
 
 /** Блок ценностей */
 export const Values = () => {
@@ -44,5 +45,6 @@ export const Values = () => {
                 {component}
             </div>
         ))}
+        <ValuesSlider length={Math.ceil(components.length)}/>
     </div>
 };

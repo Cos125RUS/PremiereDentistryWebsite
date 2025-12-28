@@ -26,5 +26,9 @@
                 font-size: 36px;
             }
         }
+
+        @media (max-width: 480px) {
+            padding: 70px 0 30px;
+        }
     }
 }
