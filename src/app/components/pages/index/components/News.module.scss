@@ -18,6 +18,18 @@
     height: 60px;
     top: calc((400px - 60px) / 2);
   }
+
+  @media (max-width: 768px) {
+    width: 55px;
+    height: 55px;
+    top: calc((400px - 55px) / 2);
+  }
+
+  @media (max-width: 480px) {
+    width: 50px;
+    height: 50px;
+    top: calc((354px - 50px) / 2);
+  }
 }
 
 .leftScrollBtn {
@@ -31,6 +43,14 @@
   @media (max-width: 1280px) {
     left: calc(-60px / 2);
   }
+
+  @media (max-width: 768px) {
+    left: calc(-55px / 2);
+  }
+
+  @media (max-width: 480px) {
+    left: calc(-50px / 2);
+  }
 }
 
 .rightScrollBtn {
@@ -39,6 +59,14 @@
 
   @media (max-width: 1280px) {
     right: calc(-60px / 2);
+  }
+
+  @media (max-width: 768px) {
+    right: calc(-55px / 2);
+  }
+
+  @media (max-width: 480px) {
+    right: calc((100% - 257px - 50px) / 2);
   }
 }
 
@@ -52,6 +80,10 @@
 
   @media (max-width: 768px) {
     margin-bottom: 60px;
+  }
+
+  @media (max-width: 480px) {
+    margin-bottom: 162px;
   }
 }
 
@@ -75,6 +107,10 @@
 
   @media (max-width: 1280px) {
     margin-bottom: 50px;
+  }
+
+  @media (max-width: 480px) {
+    margin-bottom: 33px;
   }
 }
 
@@ -100,6 +136,10 @@
 
   @media (max-width: 768px) {
     padding: 18px 29px;
+  }
+
+  @media (max-width: 480px) {
+    padding: 16px 29px;
   }
 }
 
@@ -184,6 +224,10 @@
       }
 
       > p {
+        &:first-child {
+          margin-bottom: 10px;
+        }
+
          &:last-child {
            max-width: 272px;
          }
@@ -194,6 +238,29 @@
   @media (max-width: 768px) {
     .img {
       width: 350px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .img {
+      max-height: 354px;
+      margin-bottom: 28px;
+
+      >img {
+        height: 354px;
+        width: 257px;
+      }
+
+      >a {
+        padding: 9px 14.5px;
+      }
+    }
+
+    .text {
+      >p:first-child {
+        font-size: 13px;
+        margin-bottom: 12px;
+      }
     }
   }
 }
