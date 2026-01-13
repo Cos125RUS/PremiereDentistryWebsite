@@ -46,19 +46,19 @@ ul, li {
     margin-left: calc((100% - 1620px) / 2);
     margin-right: calc((100% - 1620px) / 2);
 
-    @media (max-width: 1280px) {
+    @media (max-width: 1620px) {
         max-width: 1200px;
         margin-left: calc((100% - 1200px) / 2);
         margin-right: calc((100% - 1200px) / 2);
     }
 
-    @media (max-width: 768px) {
+    @media (max-width: 1200px) {
         max-width: 708px;
         margin-left: calc((100% - 708px) / 2);
         margin-right: calc((100% - 708px) / 2);
     }
 
-    @media (max-width: 480px) {
+    @media (max-width: 708px) {
         max-width: 345px;
         margin-left: calc((100% - 345px) / 2);
         margin-right: calc((100% - 345px) / 2);

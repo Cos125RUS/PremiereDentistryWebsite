@@ -11,7 +11,7 @@
             color: var(--deep-brown);
         }
 
-        @media (max-width: 1280px) {
+        @media (max-width: 1620px) {
             padding: 75px 0 50px;
 
             h2 {
@@ -19,7 +19,7 @@
             }
         }
 
-        @media (max-width: 768px) {
+        @media (max-width: 1200px) {
             padding-top: 60px;
 
             h2 {
@@ -27,7 +27,7 @@
             }
         }
 
-        @media (max-width: 480px) {
+        @media (max-width: 708px) {
             padding: 70px 0 30px;
         }
     }
