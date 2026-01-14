@@ -1,36 +1,32 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Тестовое задание frontend разработчика №1
 
-## Getting Started
+Необходимо реализовать адаптивную верстку по макету [Figma](https://www.figma.com/design/tvbitHc77EVeqcBH48MNZt/%D0%A2%D0%B5%D1%81%D1%82%D0%BE%D0%B2%D0%BE%D0%B5?node-id=0-1&p=f&t=tJJ9JUw8uXguuK7l-0)
 
-First, run the development server:
+Ссылка на макет: https://www.figma.com/design/tvbitHc77EVeqcBH48MNZt/%D0%A2%D0%B5%D1%81%D1%82%D0%BE%D0%B2%D0%BE%D0%B5?node-id=0-1&p=f&t=tJJ9JUw8uXguuK7l-0
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Условия верстки
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- Можно использовать любые библиотеки для карусели(слайдера)
+- Верстка должна соответствовать дизайну, небольшая погрешность допустима
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Условия формы
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- Поля `Имя` и `Телефон` обязательны для заполнения
+- `Email` должен соответствовать формату: [name@example.com](mailto:name@example.com)
+- `Телефон` должен соответствовать формату: `+7 (423) 123-45-67`
 
-## Learn More
+## Требования
 
-To learn more about Next.js, take a look at the following resources:
+- Работа выполнена с использованием инструментов: `Nextjs`, `CSS/SCSS modules`, `TypeScript`
+- Не допускается использование css-фреймворков (`Bootstrap`, `Foundation` и другие).
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Плюсом будет если
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- У формы реализована отправка на сервер c помощью `AJAX` (можно фейковой).
+- Реализована обработка ответа с сервера, т.е. сообщение об успешной отправке или ошибки.
+- Реализовать серверный запрос(SSR) для секции с новостями используя любые публичные мок апи
 
-## Deploy on Vercel
+## Когда все готово
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Выложите готовое задание на `GitHub/GitLab`
+- Отправьте нам ссылку на репозиторий
